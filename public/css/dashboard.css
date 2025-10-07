@@ -1,0 +1,716 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 60%;
+    gap: 20px;
+}
+
+.amount-card {
+  background-color: #fffff5;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 30px 30px 30px;
+  border: 1px solid #f0f0f0;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.amount-card:hover {
+    transform: translateY(-2px);
+    border: 1px solid #d2d2d2;
+    box-shadow: 0px 3px 3px 0px #dfdfdf;
+}
+
+.amount-card .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #4d4d4d;
+    margin: 0;
+    padding: 0;
+}
+
+.amount-card .top h6 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    margin: 0;
+    padding: 0;
+}
+
+.amount-card .top button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: #282525;
+    align-items: center;
+    justify-content: center;
+}
+
+.amount-card .top button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px 2px #d2d2d2;
+    color: #ffffff;
+    background-color: #282525;
+}
+
+.amount-card .mid {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.amount-card .mid h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #3a3636;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.amount-card .mid h1 i {
+    font-size: 52px;
+}
+
+.amount-card  .mid h6 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    margin-bottom: 10px;
+    contain: #3a3636;
+}
+
+.amount-card .bot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.amount-card .bot h6 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: #4d4d4d;
+    margin: 0;
+    padding: 0;
+}
+
+.amount-card .bot input {
+    border: none;
+    width: 160px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #3a3636;
+    cursor: pointer;
+    letter-spacing: -1px;
+    background-color: #fffff5;
+    padding: 0;
+    margin: 0;
+}
+
+.amount-card .bot h5 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3a3636;
+    letter-spacing: -1px;
+    margin: 0;
+    padding: 0;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 40%;
+    transition: all 0.3s ease;
+}
+
+.task-manager {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.task-manager:hover {
+    transform: translateY(-2px);
+    border: 1px solid #d2d2d2;
+    box-shadow: 0 3px 3px 0 #dfdfdf;
+}
+
+.task-manager h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3a3636;
+}
+
+.task-manager .search-filter {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 8px;
+    position: relative;
+    margin: 10px 0 10px 0;
+}
+
+.search-task #taskSearch {
+    height: 35px;
+    width: 100%;
+    padding: 10px 0 10px 33px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.search-task span i {
+    position: absolute;
+    font-size: 14px;
+    left: 10px;
+    top: 11px;
+    color: #4d4d4d;
+}
+
+#taskFilter,
+#taskStatus {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.task-list {
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.add-task .add-task-btn {
+    margin: 10px 0 10px 0;
+    width: 100%;
+    padding: 10px;
+    font-weight: 500;
+    border-radius: 30px;
+    border: 1px solid;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.task-input-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.task-input-header input {
+    height: 35px;
+    width: 90%;
+    padding: 10px 0 10px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.task-input-header button {
+    padding: 2.5px 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #810504;
+    color: #810504;
+    transition: all 0.3s ease;
+}
+
+.task-input-header button:hover {
+    background-color: #810504;
+    border: none;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Make the Add Task form controls consistent */
+.add-task .form-select.form-select-sm {
+    height: 35px;
+    border-radius: 8px;
+}
+
+.add-task .time-input-group label {
+    font-size: 12px;
+    color: #4d4d4d;
+    margin-bottom: 4px;
+}
+
+.add-task .time-input-group input[type="date"],
+.add-task .time-input-group input[type="time"] {
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+}
+
+.task-description-input {
+    width: 100%;
+    height: 70px;
+    padding: 10px 5px 10px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.task-input-actions {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    background-color: #a8dadc;
+    margin-top: 10px;
+    justify-content: space-between;
+    padding: 20px 40px 10px 40px;
+}
+
+.task-notes,
+.task-reminders,
+.task-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.task-input-actions button {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background-color: #fffff5;
+    transition: all 0.3s ease;
+}
+
+.task-input-actions button:hover,
+.task-input-actions button:focus {
+    background-color: #4d4d4d;
+    color: #fffff5;
+    transform: translateY(-2px);
+}
+
+.task-input-actions p {
+    margin-bottom: 0;
+    font-size: 15px;
+    color: #4d4d4d;
+}
+
+
+/* Classification buttons */
+.classification-buttons {
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    background-color: #a8dadc;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    padding: 20px 40px 10px 40px;
+}
+
+.task-class-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.task-class-btn label {
+    letter-spacing: 0.6px;
+    font-weight: 500;
+    font-size: 12px;
+    color: #4d4d4d;
+}
+
+.classification-buttons .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: none;
+    color: #4d4d4d;
+    background-color: #fffff5;
+    transition: all 0.3s ease;
+}
+
+.classification-buttons .btn.active {
+    background-color: #4d4d4d;
+    border-color: #4d4d4d;
+    color: #fffff5;
+}
+
+.classification-buttons .btn:not(.active):hover {
+    background-color: #4d4d4d;
+    border-color: #4d4d4d;
+    color: #fffff5;
+    box-shadow: 0 3px 3px 0 #302e2e;
+    transform: translateY(-2px);
+}
+
+/* Urgent task styles */
+.urgent-task {
+    border: 2px solid #dc3545 !important;
+    background: #ffe6e6 !important;
+    animation: pulse-urgent 2s infinite;
+}
+
+@keyframes pulse-urgent {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+/* Shaking bell animation */
+.shaking-bell {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+}
+
+/* Make sure urgent tasks stand out */
+.tm-card.urgent-task .tm-card-top h3 {
+    color: #dc3545;
+    font-weight: 800;
+}
+
+.tm-card.urgent-task .tm-date {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Task cards */
+/* Task cards with distinct status colors */
+.task-list .tm-card {
+    border-radius: 14px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Original task card styles as fallback */
+.task-list .tm-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-list .tm-card-top h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3a3636;
+    margin: 0;
+}
+
+.task-list .tm-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #4d4d4d;
+    font-weight: 600;
+}
+
+/* Pending tasks - Yellow/Amber theme */
+.tm-card.status-pending {
+    background: #fff9e6; /* Light yellow background */
+    border: 1px solid #ffd966; /* Amber border */
+}
+
+/* Completed tasks - Green theme */
+.tm-card.status-completed {
+    background: #e8f5e8; /* Light green background */
+    border: 1px solid #81c784; /* Green border */
+}
+
+/* Cancelled tasks - Red theme */
+.tm-card.status-cancelled {
+    background: #ffeaea; /* Light red background */
+    border: 1px solid #e57373; /* Red border */
+}
+
+/* Hover effects for all cards */
+.task-list .tm-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Status text colors to match the themes */
+.tm-card.status-pending .tm-card-top h3 {
+    color: #e6a700; /* Dark amber for pending titles */
+}
+
+.tm-card.status-completed .tm-card-top h3 {
+    color: #2e7d32; /* Dark green for completed titles */
+}
+
+.tm-card.status-cancelled .tm-card-top h3 {
+    color: #c62828; /* Dark red for cancelled titles */
+}
+
+/* Status button colors to match */
+.tm-card.status-pending .tm-status {
+    color: #e6a700;
+}
+
+.tm-card.status-completed .tm-status {
+    color: #2e7d32;
+}
+
+.tm-card.status-cancelled .tm-status {
+    color: #c62828;
+}
+
+.task-list .tm-card-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+    color: #6b6b6b;
+    font-size: 13px;
+}
+
+.task-list .tm-card-bottom .tm-class i,
+.task-list .tm-card-bottom .tm-date i {
+    margin-right: 4px;
+}
+
+.task-list .tm-dot {
+    opacity: 0.6;
+}
+
+/* Status colors (optional subtle tint) */
+.tm-card.status-pending { border-color: #bfa7a7; }
+.tm-card.status-completed { border-color: #9db79f; }
+.tm-card.status-cancelled { border-color: #c19a9a; }
+
+/* Expandable details */
+.tm-details {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #c9a4a4;
+}
+.tm-desc-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4d4d4d;
+}
+.tm-desc-text {
+    font-size: 14px;
+    color: #3a3636;
+    white-space: pre-wrap;
+}
+
+/* Edit form styles */
+.tm-inline-editor {
+    margin-top: 10px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.tm-inline-editor .form-control {
+    border: 1px solid #ced4da;
+}
+
+.tm-inline-editor .form-control:focus {
+    border-color: #810504;
+    box-shadow: 0 0 0 0.2rem rgba(129, 5, 4, 0.25);
+}
+
+.tm-inline-editor .btn-primary {
+    background-color: #810504;
+    border-color: #810504;
+}
+
+.tm-inline-editor .btn-primary:hover {
+    background-color: #670403;
+    border-color: #670403;
+}
+
+/* style for pie chart */
+.pie-chart {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    border: 1px solid #f0f0f0;
+    height: 300px;
+    padding: 20px 30px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pie-chart:hover {
+    transform: translateY(-2px);
+    border: 1px solid #d2d2d2;
+    box-shadow: 0 3px 3px 0 #dfdfdf;
+}
+
+.pie-chart h2 {
+    font-size: 24px;
+    color: #3a3636;
+    font-weight: 700;
+}
+
+#chartContainer {
+    width: 550px;
+    height: 200px;
+    margin-top: 0;
+}
+
+#fundChart {
+    position: absolute;
+    top: 70px;
+}
+
+.copyright {
+    margin: 10px 0 10px 30px;
+    font-size: 12px;
+    color: #555;
+}
+
+/* add this style */
+.bi-bell-fill {
+    color: #dc3545 !important;
+}
+
+/* Keep the shaking animation only for upcoming urgent tasks */
+.shaking-bell {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+}
+
+/* Make sure urgent tasks (both upcoming and overdue) stand out */
+.tm-card.urgent-task {
+    background: #ffe6e6 !important;
+    border: 2px solid #dc3545 !important;
+    border-left: 4px solid #dc3545 !important;
+    animation: pulse-urgent 2s infinite;
+}
+
+/* Only apply pulsing animation to upcoming urgent tasks */
+.tm-card.urgent-task .shaking-bell {
+    animation: pulse-urgent 2s infinite;
+}
+
+@keyframes pulse-urgent {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+.tm-card.urgent-task .tm-card-top h3 {
+    color: #dc3545;
+    font-weight: 800;
+}
+
+.tm-card.urgent-task .tm-date {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Add to dashboard.css */
+.tm-status-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.tm-status-complete-btn,
+.tm-status-cancel-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tm-status-complete-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.tm-status-complete-btn:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
+}
+
+.tm-status-cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.tm-status-cancel-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+}
+
+.tm-status-complete-btn:disabled,
+.tm-status-cancel-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* style for search*/
+.no-tasks {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.tm-card {
+    transition: all 0.3s ease;
+}
+
+.tm-card[style*="display: none"] {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}

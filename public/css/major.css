@@ -1,0 +1,307 @@
+* {
+padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  position: relative;
+   background-color: #f0f0f0;
+   display: grid;
+    grid-template-areas: 
+        "side head head"
+        "side content content"
+        "side content content";
+    grid-template-columns: 370px 1fr 1fr;
+    grid-template-rows: 70px 1fr 1fr;
+    overflow: hidden;
+}
+
+header {grid-area: head;}
+aside {grid-area: side;}
+main {grid-area: content;}
+
+header {
+  background-color: #fff;
+  height: 70px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+header .dropdown{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  gap: 20px;
+  right: 15px;
+  top: 18px;
+}
+
+
+.notification-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #9c9696;
+  position: absolute;
+  top: 24px;
+  right: 90px;
+  transition: all 0.2s ease;
+}
+
+.notification-btn:hover {
+  color: #4d4d4d;
+  transform: scale(1.1);
+}
+
+header .IMS-logo {
+  position: absolute;
+  display: flex;
+  font-size: 18px;
+  font-weight: 700;
+  color: #810504;
+  left: 40px;
+  top: 22px;
+}
+
+.IMS-logo img {
+  margin-right: 3px;
+  width: 20px;
+  vertical-align: middle;
+}
+
+/* Default sidebar */
+aside {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #810504;
+  color: white;
+  height: 100vh;
+  max-width: 370px;
+  width: 100%;
+  transition: max-width 0.3s ease, width 0.3s ease; /* smooth transition */
+  /* overflow: hidden; */
+}
+
+/* Collapsed sidebar */
+aside.collapsed {
+  max-width: 90px;
+  width: 90px;
+}
+
+/* Adjust grid smoothly when collapsed */
+body {
+  transition: grid-template-columns 0.3s ease;
+}
+body.sidebar-collapsed {
+  grid-template-columns: 90px 1fr 1fr;
+}
+
+aside .sidebar-toggle-btn {
+  position:absolute;
+  background-color:#810504;
+  right:-12px;
+  top:20px;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:none;
+  transition: all 0.2s ease;
+  z-index: 1032;
+}
+
+aside .sidebar-toggle-btn i {
+  color:#fff;
+  font-size:20px;
+  transition: all 0.2s ease;
+  z-index: 1033;
+}
+
+aside .sidebar-toggle-btn i:hover {
+  transform: scale(1.1);
+  color: #000;
+}
+
+nav {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: all 0.3s ease;
+}
+
+aside.collapsed nav {
+  padding-top: 10px;
+}
+/* Smooth transition for nav links */
+nav a {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  list-style: none;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  color: rgb(204, 199, 199);
+  transition: all 0.3s ease;
+  background-color: transparent;
+  width: 160px;
+  height: 50px;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  margin-left: 110px;
+}
+
+nav a i {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/* Collapsed nav */
+aside.collapsed nav a {
+  margin-left: 10px;
+  width: fit-content;
+  justify-items: center;
+  transition: all 0.3s ease;
+  gap: 0;
+}
+
+aside.collapsed nav a span {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease, width 0.2s ease;
+}
+
+/* Expanded text */
+nav a span {
+  transition: opacity 0.2s ease, width 0.2s ease;
+}
+
+.sorsu-logo-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+  margin-left: 70px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.sorsu-logo-container img {
+  width: 90px;
+}
+
+aside.collapsed .sorsu-logo-container {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+aside.collapsed .sorsu-logo-container img {
+  width: 50px;
+  top: 10px;
+}
+
+.sorsu-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+aside.collapsed .sorsu-text {
+  display: none;
+}
+
+.sorsu-text h1 {
+  font-size: 24px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.sorsu-text h3 {
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+}
+
+
+nav a.active {
+  color: #fff;
+  font-size: 16px;
+  background-color: #803030;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+  background-color: #803030;
+  transition: all 0.3s ease;
+}
+
+footer {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+}
+
+main {
+  padding: 10px 20px 10px 20px;
+  background-color: #f0f0f0;
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh-70px);
+}
+
+main .title {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+main .title h1 {
+  font-size: 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #4d4d4d;
+  font-weight: 700;
+  margin-bottom: 0%;
+}
+
+main .title p {
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #4d4d4d;
+  font-weight: normal;
+  margin-top: 0%;
+}
+/* Ensure dropdown appears in front of all elements */
+.dropdown-menu {
+    z-index: 1050 !important;
+}
+
+/* Position header properly relative to dropdown */
+header {
+    position: relative;
+    z-index: 1030;
+}
+
+/* If modals are still overlapping, adjust their z-index */
+.modal {
+    z-index: 1060; /* Higher than dropdown */
+}
+
+/* Make sure the dropdown toggle button has proper stacking */
+.dropdown-toggle {
+    position: relative;
+    z-index: 1031;
+}

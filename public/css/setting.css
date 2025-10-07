@@ -1,0 +1,207 @@
+.main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.security-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 30px 30px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.security-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 3px 0 #d2d2d2;
+    border: 1px solid #dfdfdf;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+    font-weight: 500;
+    color: #4d4d4d;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    color: #b93a3a;
+    border-bottom: 2px solid #b93a3a;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+h3 {
+    margin-bottom: 25px;
+    color: #3a3636;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.inputs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.inputs span {
+    position: absolute;
+    margin-left: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    bottom: -25px;
+}
+
+.inputs span input {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+input,  select {
+    padding: 10px 10px 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 25px;
+    border: 1px solid #d2d2d2;
+    color: #555;
+}
+
+
+/* Buttons */
+.btn-container {
+    margin-top: 50px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-reset, .btn-update {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-reset:hover, .btn-update:hover,
+.btn-restore:hover, .btn-backup:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 3px 0 #d2d2d2;
+}
+
+.copyright {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 12px;
+    color: #555;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.data-backup-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #a8dadc;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 30px 30px;
+    width: 100%;
+    height: 280px;
+    transition: all 0.3s ease;
+}
+
+.data-backup-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 3px 0 #d2d2d2;
+    border: 1px solid #dfdfdf;
+}
+
+.data-backup-card h3 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+
+.btn-backup {
+    position: absolute;
+    width: 40%;
+    top: 200px;
+    left: 30px;
+    padding: 10px;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.data-backup-card select {
+    position: absolute;
+    width: 85%;
+    top: 130px;
+    border: none;
+    color: #4d4d4d;
+    background-color: transparent;
+}
+
+.data-backup-card select:focus,
+.data-backup-card select:hover {
+    border: none;
+    box-shadow: none;
+}
+
+.btn-restore {
+    position: absolute;
+    width: 40%;
+    top: 200px;
+    right: 30px;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
